@@ -3,10 +3,10 @@ const fs = require('fs');
 
 
 const server = http.createServer((req,res) => {
-    // console.log('request received');
-    // res.setHeader('Content-Type','text/html');//помагает указать что мы используем теги html
+  
+    res.setHeader('Content-Type','text/html');//помагает указать что мы используем теги html
     if (/jpg|png|gif|jpeg|js/.test(req.url)) { // проверяем соответствие url запроса
-
+      
         fs.readFile(req.url.replace('/',''), (err, data) => {
             if (err) { 
                 res.end(); 
